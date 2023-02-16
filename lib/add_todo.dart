@@ -20,6 +20,7 @@ class AddTodo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
+              controller: todos.titleController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
               ),
@@ -28,6 +29,7 @@ class AddTodo extends StatelessWidget {
               height: 10,
             ),
             TextField(
+              controller: todos.descController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
               ),
