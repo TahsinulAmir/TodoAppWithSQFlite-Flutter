@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:todoappsqflite/db/database_manager.dart';
+import 'package:todoappsqflite/models/todo_model.dart';
 
 class Todos with ChangeNotifier {
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
   bool isLoading = false;
+  List<TodoModel> itemTodo = [];
 
   // instansiasi database
   DatabaseManager database = DatabaseManager.instance;
@@ -21,9 +23,11 @@ class Todos with ChangeNotifier {
       'description': descController.text,
     });
 
-    List<Map<String, dynamic>> data = await db.query('todos');
-
     isLoading = false;
     notifyListeners();
+  }
+
+  Future<void> getTodo() async {
+    Database db = await database.db;
   }
 }
