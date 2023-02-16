@@ -12,7 +12,11 @@ class TodoScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => AddTodo()));
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddTodo(),
+            ),
+          );
         },
         child: Icon(Icons.add_task),
       ),
