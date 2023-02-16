@@ -30,5 +30,15 @@ class Todos with ChangeNotifier {
   Future<void> getTodo() async {
     Database db = await database.db;
     List<Map<String, dynamic>> data = await db.query('todos');
+
+    // Menambahkan data
+    for (var item in data) {
+      itemTodo.add(
+        TodoModel(
+            id: item['id'],
+            title: item['title'],
+            description: item['description']),
+      );
+    }
   }
 }
