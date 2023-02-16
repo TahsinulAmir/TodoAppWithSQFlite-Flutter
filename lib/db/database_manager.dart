@@ -42,4 +42,10 @@ class DatabaseManager {
       },
     );
   }
+
+  // Close database
+  Future closeDB() async {
+    _db = await instance.db;
+    _db!.close();
+  }
 }
