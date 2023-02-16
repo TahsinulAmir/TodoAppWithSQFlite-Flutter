@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:todoappsqflite/add_todo.dart';
 
 class TodoScreen extends StatelessWidget {
   const TodoScreen({super.key});
@@ -9,7 +10,10 @@ class TodoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AddTodo()));
+        },
         child: Icon(Icons.add_task),
       ),
       appBar: AppBar(
