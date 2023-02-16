@@ -43,6 +43,7 @@ class AddTodo extends StatelessWidget {
                     todos.descController.text.isNotEmpty) {
                   todos.addTodo();
                 }
+                Navigator.pop(context);
               },
               child: Text(todos.isLoading ? "Loading..." : "Add"),
             ),
