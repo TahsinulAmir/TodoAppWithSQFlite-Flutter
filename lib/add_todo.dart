@@ -44,7 +44,7 @@ class AddTodo extends StatelessWidget {
                   todos.addTodo();
                 }
               },
-              child: Text("Add"),
+              child: Text(todos.isLoading ? "Loading..." : "Add"),
             ),
           ],
         ),
