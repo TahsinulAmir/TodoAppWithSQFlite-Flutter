@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:provider/provider.dart';
 import 'package:todoappsqflite/add_todo.dart';
+import 'package:todoappsqflite/provider/todos.dart';
 
 class TodoScreen extends StatelessWidget {
   const TodoScreen({super.key});
@@ -14,7 +16,10 @@ class TodoScreen extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddTodo(),
+              builder: (context) => ChangeNotifierProvider(
+                create: (context) => Todos(),
+                child: AddTodo(),
+              ),
             ),
           );
         },
