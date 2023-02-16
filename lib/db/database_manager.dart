@@ -26,5 +26,20 @@ class DatabaseManager {
 
     // Create path
     String path = join(docDirectory.path, 'todo.db');
+
+    //  create table
+    return await openDatabase(
+      path,
+      version: 1,
+      onCreate: (database, version) async {
+        return await database.execute('''
+          CREATE TABLE todos (
+            id INTEGER PRIMARY KEY,
+            title TEXT,
+            description TEXT
+          )
+        ''');
+      },
+    );
   }
 }
