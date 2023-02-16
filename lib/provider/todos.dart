@@ -20,6 +20,9 @@ class Todos with ChangeNotifier {
       'title': titleController.text,
       'description': descController.text,
     });
+
+    List<Map<String, dynamic>> data = await db.query('todos');
+
     isLoading = false;
     notifyListeners();
   }
