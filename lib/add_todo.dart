@@ -38,7 +38,12 @@ class AddTodo extends StatelessWidget {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (todos.titleController.text.isNotEmpty &&
+                    todos.descController.text.isNotEmpty) {
+                  todos.addTodo();
+                }
+              },
               child: Text("Add"),
             ),
           ],
